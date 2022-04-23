@@ -17,10 +17,10 @@ $total = mysqli_num_rows($buscar);
 while($array = mysqli_fetch_array($buscar)){
 
 
- echo $senha = $array['senha'];
+ $senha = $array['senha'];
  $nameusuario = $array['nomeusuario'];
 
-echo $senhadecodificada = sha1($senhausuario);
+$senhadecodificada = sha1($senhausuario);
 
 
 if ($total > 0) {
@@ -39,7 +39,5 @@ if ($total > 0) {
 }
 
 }
-
-
 
 ?>
