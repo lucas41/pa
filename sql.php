@@ -1,13 +1,16 @@
 <?php
 
 
-$servername = "localhost";
-$database = "pa";
-$username = "root";
-$password = "";
+$host = 'localhost';
 
-$conexao = mysqli_connect($servername, $username, $password, $database);
+define('USER', 'root');
 
+define('PASSWORD', '');
+
+define('DB_NAME', 'pa');
+
+
+$conexao = new PDO('mysql:host='.$host.';dbname='.DB_NAME, USER, PASSWORD);
 
 
 

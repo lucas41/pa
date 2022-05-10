@@ -6,40 +6,52 @@ include 'password.php';
 $usuario = $_POST['usuario'];
 $senhausuario = $_POST['senha'];
 
-$sql = "SELECT mailusuario,senha,nomeusuario FROM usuarios WHERE mailusuario = '$usuario'";
-
-$buscar = mysqli_query($conexao,$sql);
-
-$total = mysqli_num_rows($buscar);
-
- 
-
-while($array = mysqli_fetch_array($buscar)){
+$consulta = $conexao->prepare("select mailusuario,senha,nomeusuario FROM usuarios WHERE mailusuario = '$usuario'");
 
 
- echo $senha = $array['senha'];
- $nameusuario = $array['nomeusuario'];
+//$buscar - mysqli_query($conexao,$sql)
+$consulta->execute();
 
-echo $senhadecodificada = sha1($senhausuario);
+// $total - mysqli_num_rows($buscar)
+
+$total = $consulta->rowCount();
 
 
-if ($total > 0) {
-    if($senhadecodificada == $senha){
+$linha = $consulta->fetchall(PDO::FETCH_OBJ);
 
-        session_start();
-        $_SESSION['usuario'] = $nameusuario;
+
+
+foreach($linha as $func){ 
+
+    $mailusuario = $func->mailusuario;
+    $senha = $func->senha; //senha que recebo do banco
+    $nomeusuario = $func->nomeusuario;
+
+
+    $senhadecodificada = sha1('$senhausuario'); // senha recebida pelo post sendo criptografada para conferencia
+
+    if($total > 0){ // verifica se a pesquisa encontrou ao menos um cadastro no banco de dados
         
-        header('Location: menu.php');
+        if($senhadecodificada == $senha){ // compara a senha que vem do banco com a senha envida pelo post ja criptografada
+   
+        session_start();
+        $_SESSION['usuario'] = $nomeusuario; // inicia nova sessão e passa o nome da pessoa
+        
+        header('Location: menu.php'); // renderiza o menu
     } else {
-        header('Location: erro.php');
+        header('Location: erro.php'); // eniva para a pagina de erro
     }
 } else {
-    
-    header('Location: erro.php');
+    header('Location: erro.php');// eniva para a pagina de erro
 }
+     
 
-}
-
-
-
+   
+   }
 ?>
+
+
+
+
+
+

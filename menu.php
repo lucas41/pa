@@ -11,7 +11,7 @@
 <body>
     <?php
 
-session_start();
+    session_start();
 
     $usuario = $_SESSION['usuario'];
 
@@ -19,10 +19,10 @@ session_start();
         header('location: index.html');
     }
 
-    echo 'bem vindo '. $_SESSION['usuario'];
+    echo 'bem vindo ' . $_SESSION['usuario'];
     ?>
 
-<a class="dropdown-item" style="background-color: red; color: white" href="sair.php">Sair</a>
+    <a  style="background-color: red; color: white" href="sair.php">Sair</a>
 </body>
 
 </html>
