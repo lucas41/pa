@@ -7,10 +7,15 @@ include 'password.php';
 $nomeusuario = $_POST['nomeusuario'];
 $mailusuario = $_POST['mailusuario'];
 $senhausuario = $_POST['senhausuario'];
+$cpf = $_POST['cpf'];
+$telefone = $_POST['telefone'];
 
 
-$novo_cadastro = array($nomeusuario, $mailusuario,sha1('$senhausuario'));
-$gravar = $conexao->prepare("insert into usuarios (nomeusuario, mailusuario, senha) values (?,?,?)");
+
+$novo_cadastro = array($nomeusuario, $mailusuario, $telefone, $cpf, (md5(sha1('$senhausuario'))));
+
+
+$gravar = $conexao->prepare("insert into usuarios (nomeusuario, mailusuario,telefone,cpf,senha) values (?,?,?,?,?)");
 
 if($gravar->execute($novo_cadastro)){
     ?>

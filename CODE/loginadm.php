@@ -6,7 +6,7 @@ include 'password.php';
 $usuario = $_POST['usuario'];
 $senhausuario = $_POST['senha'];
 
-$consulta = $conexao->prepare("select mailusuario,senha,nomeusuario FROM usuarios WHERE mailusuario = '$usuario'");
+$consulta = $conexao->prepare("select email,senha,nome FROM administradores WHERE email = '$usuario'");
 
 
 //$buscar - mysqli_query($conexao,$sql)
@@ -19,18 +19,18 @@ $total = $consulta->rowCount();
 
 $linha = $consulta->fetchall(PDO::FETCH_OBJ);
 
-
+$permissao = 'ok';
 
 foreach($linha as $func){ 
 
-    $mailusuario = $func->mailusuario;
+    $mailusuario = $func->email;
     $senha = $func->senha; //senha que recebo do banco
-    $nomeusuario = $func->nomeusuario;
+    $nomeusuario = $func->nome;
 
 
-    $senhadecodificada = md5(sha1('$senhausuario')); // senha recebida pelo post sendo criptografada para conferencia em md5 e sha1
+    $senhadecodificada = sha1('$senhausuario'); // senha recebida pelo post sendo criptografada para conferencia em md5 e sha1
 
-
+ 
 
     if($total > 0){ // verifica se a pesquisa encontrou ao menos um cadastro no banco de dados
         
@@ -38,8 +38,9 @@ foreach($linha as $func){
    
         session_start();
         $_SESSION['usuario'] = $nomeusuario; // inicia nova sessão e passa o nome da pessoa
+        $_SESSION['permission'] = $permissao;
         
-        header('Location: menu.php'); // renderiza o menu
+        header('Location: menuadm.php'); // renderiza o menu
     } else {
         header('Location: erro.php'); // eniva para a pagina de erro
     }

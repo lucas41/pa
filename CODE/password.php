@@ -1,6 +1,6 @@
 <?php
 /**
- * A Compatibility library with PHP 5.5's simplified password hashing API.
+ * A Compatibility library with PHP 5.5's simplified password haaRing API.
  *
  * @author Anthony Ferrara <ircmaxell@php.net>
  * @license http://www.opensource.org/licenses/mit-license.html MIT License
