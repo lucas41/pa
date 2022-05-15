@@ -28,7 +28,9 @@ foreach($linha as $func){
     $nomeusuario = $func->nomeusuario;
 
 
-    $senhadecodificada = md5(sha1('$senhausuario')); // senha recebida pelo post sendo criptografada para conferencia em md5 e sha1
+    $senhadecodificada = md5($senhausuario);
+    // senha recebida pelo post sendo criptografada para conferencia em md5 e sha1
+    $senhadecodificada = sha1($senhadecodificada);
 
 
 

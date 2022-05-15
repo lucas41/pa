@@ -1,7 +1,7 @@
 <?php
 
 include 'sql.php';
-include 'password.php';
+include 'scripts/password.php';
 
 
 $nomeusuario = $_POST['nomeusuario'];
@@ -11,13 +11,20 @@ $cpf = $_POST['cpf'];
 $telefone = $_POST['telefone'];
 
 
+$senhausuario = md5($senhausuario);
+$senhausuario = sha1($senhausuario);
 
-$novo_cadastro = array($nomeusuario, $mailusuario, $telefone, $cpf, (md5(sha1('$senhausuario'))));
+
+$novo_cadastro = array($nomeusuario, $mailusuario, $telefone, $cpf, $senhausuario);
 
 
 $gravar = $conexao->prepare("insert into usuarios (nomeusuario, mailusuario,telefone,cpf,senha) values (?,?,?,?,?)");
 
 if($gravar->execute($novo_cadastro)){
+
+
+
+
     ?>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
