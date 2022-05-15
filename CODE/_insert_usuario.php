@@ -1,6 +1,6 @@
 <?php
 
-include 'sql.php';
+include 'sql/sql.php';
 include 'scripts/password.php';
 
 
