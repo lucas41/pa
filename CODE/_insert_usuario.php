@@ -10,6 +10,8 @@ $senhausuario = $_POST['senhausuario'];
 $cpf = $_POST['cpf'];
 $telefone = $_POST['telefone'];
 
+$titulo = "Bem vindo ao website";
+$mensagem = "Olá " . $nomeusuario . " é um prazer ter você conosco seja bem vindo";
 
 $senhausuario = md5($senhausuario);
 $senhausuario = sha1($senhausuario);
@@ -20,9 +22,11 @@ $novo_cadastro = array($nomeusuario, $mailusuario, $telefone, $cpf, $senhausuari
 
 $gravar = $conexao->prepare("insert into usuarios (nomeusuario, mailusuario,telefone,cpf,senha) values (?,?,?,?,?)");
 
+
+
 if($gravar->execute($novo_cadastro)){
 
-
+   mail($mailusuario,$titulo, $mensagem)
 
 
     ?>
