@@ -22,7 +22,7 @@
     echo 'bem vindo ' . $_SESSION['usuario'];
     ?>
 
-    <a  style="background-color: red; color: white" href="sair.php">Sair</a>
+    <a  style="background-color: red; color: white" href="scripts/sair.php">Sair</a>
 </body>
 
 </html>
