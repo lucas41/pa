@@ -10,16 +10,13 @@
 </head>
 
 <body>
+    
     <?php
-
     session_start();
-
     $usuario = $_SESSION['usuario'];
-
     if (!isset($_SESSION['usuario'])) {
         header('location: index.html');
     }
-
     ?>
 
     <div class="container" style="margin-top: 40px">
@@ -47,20 +44,18 @@
                             <img src="uploads/<?php echo $imagem ?>" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">Chamado Numero: <?php echo $id ?></h5>
-                                <p class="card-text">Localização na rua: <?php echo $nomerua ?> No numero <?php echo $numero ?></p>
+                                <p class="card-text">Localização na rua: <?php echo $nomerua ?> <br> Numero - <?php echo $numero ?></p>
                                 <p class="card-text"><?php echo $detalhes ?></p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                <a href="user/chamados.php?id=<?php echo $id?>" class="btn btn-primary">Visualizar detalhes</a>
                             </div>
                         </div>
                     </div>
-                   
-
                 <?php
                 }
                 ?>
             </div>
         </div>
-    
+
         <br>
         <a class="btn btn-danger" href="scripts/sair.php">Sair</a>
     </div>

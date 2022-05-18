@@ -17,7 +17,7 @@
     if (!isset($_SESSION['usuario'])) {
         header('location: index.html');
     }
-    if( $permissao != 'ok'){
+    if ($permissao != 'ok') {
         header('location: menu.php');
     }
     ?>
@@ -52,16 +52,17 @@
                             </div>
                         </div>
                     </div>
-                   
+
 
                 <?php
                 }
                 ?>
             </div>
         </div>
-    
+
         <br>
         <a class="btn btn-danger" href="scripts/sair.php">Sair</a>
     </div>
 </body>
+
 </html>
