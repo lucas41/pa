@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    
+
     <?php
     session_start();
     $usuario = $_SESSION['usuario'];
@@ -24,41 +24,57 @@
 
         <a href="user/_insertchamado.php" class="btn btn-sm btn-primary"> Cadastrar novo chamado </a>
         <br><br>
-        <div class="container">
-            <div class="row">
-                <?php
-                include 'sql/sql.php';
-                $consulta = $conexao->prepare("select * from chamados where id_user=" . $_SESSION['id_user']);
-                $consulta->execute(); //todas as linhas da minha tabela
-                $linha = $consulta->fetchAll(PDO::FETCH_OBJ);
-                foreach ($linha as $func) {
-                    $id = $func->id_chamado;
-                    $nomerua = $func->nrua;
-                    $numero = $func->numero;
-                    $referencial = $func->referencial;
-                    $detalhes = $func->detalhes;
-                    $imagem = $func->imagem;
-                ?>
-                    <div class="col">
-                        <div class="card" style="width: 18rem;">
-                            <img src="uploads/<?php echo $imagem ?>" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Chamado Numero: <?php echo $id ?></h5>
-                                <p class="card-text">Localização na rua: <?php echo $nomerua ?> <br> Numero - <?php echo $numero ?></p>
-                                <p class="card-text"><?php echo $detalhes ?></p>
-                                <a href="user/chamados.php?id=<?php echo $id?>" class="btn btn-primary">Visualizar detalhes</a>
-                            </div>
-                        </div>
-                    </div>
-                <?php
-                }
-                ?>
-            </div>
-        </div>
+
+        <table class="table">
+            <thead>
+                <tr style="text-align: center;">
+                    <th scope="col">Nº Chamado</th>
+                    <th scope="col">Descrição</th>
+                    <th scope="col">Data</th>
+                    <th scope="col">Status</th>
+                </tr>
+            </thead>
+
+            <?php
+            include 'sql/sql.php';
+            $consulta = $conexao->prepare("select * from chamados where id_user=" . $_SESSION['id_user']);
+            $consulta->execute(); //todas as linhas da minha tabela
+            $linha = $consulta->fetchAll(PDO::FETCH_OBJ);
+            foreach ($linha as $func) {
+                $id = $func->id_chamado;
+                $nomerua = $func->nrua;
+                $numero = $func->numero;
+                $referencial = $func->referencial;
+                $detalhes = $func->detalhes;
+                $imagem = $func->imagem;
+                $data = $func->Date;
+                $status = $func->status;
+            ?>
+
+                <tr style="text-align: center;">
+                    <td> <?php echo $id ?> </td>
+                    <td> <?php echo $detalhes ?> </td>
+                    <td> <?php echo $data ?> </td>
+                    <td> <?php echo $status ?> </td>
+                    <td> <a class="btn btn-primary btn-sm" style="color:white" href="user/chamados.php?id=<?php echo $id?>" role="button"><i class="fa-solid fa-pen-to-square"></i> visualizar </a>
+                        <a class="btn btn-danger btn-sm" onclick="alerta()" style="color:white" href="deletar_categoria.php?id=<?php echo $id?>" role="button"><i class="fa-solid fa-trash"></i> Excluir </a>
+                    </td>
+                </tr>
+
+            <?php
+            }
+            ?>
+
+        </table>
 
         <br>
         <a class="btn btn-danger" href="scripts/sair.php">Sair</a>
     </div>
 </body>
+
+
+
+
+
 
 </html>

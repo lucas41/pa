@@ -6,7 +6,7 @@ $nrua = $_POST['nrua'];
 $numero = $_POST['numero'];
 $referencial = $_POST['referencial'];
 $detalhes = $_POST['detalhes'];
-
+$status = 'Aguardando';
 
 $nome_final = $_FILES['imagem']['name'];
 $_UP['pasta'] = '../uploads/';
@@ -20,9 +20,9 @@ $id_user = $_SESSION['id_user'];
 
 //echo 'bem vindo ' . $_SESSION['usuario'] . ' ID = a '. $_SESSION['id_user'];
 
-$novo_chamado = array($nrua, $numero, $referencial, $detalhes,$imagem, $id_user);
+$novo_chamado = array($nrua, $numero, $referencial, $detalhes, $imagem, $status, $id_user);
 
-$gravar = $conexao->prepare("insert into chamados (nrua, numero,referencial,detalhes,imagem,id_user) values (?,?,?,?,?,?)");
+$gravar = $conexao->prepare("insert into chamados (nrua, numero,referencial,detalhes,imagem, status, id_user) values (?,?,?,?,?,?,?)");
 
 if ($gravar->execute($novo_chamado)) {
     echo 'chamado registrado';
