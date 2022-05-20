@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 15-Maio-2022 às 21:47
+-- Tempo de geração: 20-Maio-2022 às 03:58
 -- Versão do servidor: 10.4.24-MariaDB
 -- versão do PHP: 7.4.29
 
@@ -54,6 +54,8 @@ CREATE TABLE `chamados` (
   `referencial` varchar(255) NOT NULL,
   `detalhes` varchar(255) NOT NULL,
   `imagem` varchar(255) NOT NULL,
+  `Date` date NOT NULL DEFAULT current_timestamp(),
+  `status` varchar(50) NOT NULL,
   `id_user` int(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
