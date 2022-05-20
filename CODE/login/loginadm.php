@@ -1,7 +1,7 @@
 <?php
 
-include 'sql.php';
-include 'password.php';
+include '../sql/sql.php';
+include '../scripts/password.php';
 
 $usuario = $_POST['usuario'];
 $senhausuario = $_POST['senha'];
@@ -42,12 +42,12 @@ foreach($linha as $func){
         $_SESSION['usuario'] = $nomeusuario; // inicia nova sessão e passa o nome da pessoa
         $_SESSION['permission'] = $permissao;
         
-        header('Location: menuadm.php'); // renderiza o menu
+        header('Location: ../menuadm.php'); // renderiza o menu
     } else {
-        header('Location: erro.php'); // eniva para a pagina de erro
+        header('Location: ../scripts/erro.php'); // eniva para a pagina de erro
     }
 } else {
-    header('Location: erro.php');// eniva para a pagina de erro
+    header('Location: ../scripts/erro.php');// eniva para a pagina de erro
 }
      
 

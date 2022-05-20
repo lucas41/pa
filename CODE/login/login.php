@@ -1,32 +1,27 @@
 <?php
 
-include 'sql.php';
-include 'password.php';
+include '../sql/sql.php';
+include '../scripts/password.php';
 
 $usuario = $_POST['usuario'];
 $senhausuario = $_POST['senha'];
 
-$consulta = $conexao->prepare("select mailusuario,senha,nomeusuario FROM usuarios WHERE mailusuario = '$usuario'");
+$consulta = $conexao->prepare("select id_user,mailusuario,senha,nomeusuario FROM usuarios WHERE mailusuario = '$usuario'");
 
 
-//$buscar - mysqli_query($conexao,$sql)
 $consulta->execute();
-
-// $total - mysqli_num_rows($buscar)
 
 $total = $consulta->rowCount();
 
 
 $linha = $consulta->fetchall(PDO::FETCH_OBJ);
 
-
-
 foreach($linha as $func){ 
 
     $mailusuario = $func->mailusuario;
     $senha = $func->senha; //senha que recebo do banco
     $nomeusuario = $func->nomeusuario;
-
+    $id_user = $func->id_user;
 
     $senhadecodificada = md5($senhausuario);
     // senha recebida pelo post sendo criptografada para conferencia em md5 e sha1
@@ -40,22 +35,19 @@ foreach($linha as $func){
    
         session_start();
         $_SESSION['usuario'] = $nomeusuario; // inicia nova sessão e passa o nome da pessoa
-        
-        header('Location: menu.php'); // renderiza o menu
+        $_SESSION['id_user'] = $id_user;
+
+
+        header('Location: ../menu.php'); // renderiza o menu
     } else {
-        header('Location: erro.php'); // eniva para a pagina de erro
+        header('Location: ../scripts/erro.php'); // eniva para a pagina de erro
     }
 } else {
-    header('Location: erro.php');// eniva para a pagina de erro
+    header('Location: ../scripts/erro.php');// eniva para a pagina de erro
 }
      
 
    
    }
-?>
 
-
-
-
-
-
+   ?>
