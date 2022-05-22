@@ -57,7 +57,7 @@
                     <td> <?php echo $data ?> </td>
                     <td> <?php echo $status ?> </td>
                     <td> <a class="btn btn-primary btn-sm" style="color:white" href="user/chamados.php?id=<?php echo $id?>" role="button"><i class="fa-solid fa-pen-to-square"></i> visualizar </a>
-                        <a class="btn btn-danger btn-sm" onclick="alerta()" style="color:white" href="deletar_categoria.php?id=<?php echo $id?>" role="button"><i class="fa-solid fa-trash"></i> Excluir </a>
+                       <!-- <a class="btn btn-danger btn-sm" onclick="alerta()" style="color:white" href="deletar_categoria.php?id=<?php echo $id?>" role="button"><i class="fa-solid fa-trash"></i> Excluir </a> -->
                     </td>
                 </tr>
 
