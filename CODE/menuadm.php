@@ -57,12 +57,16 @@
             ?>
 
                 <tr style="text-align: center;">
+
+<tr style="text-align: center;">
+
                     <td> <?php echo $id         ?>  </td>
                     <td> <?php echo $detalhes   ?>  </td>
                     <td> <?php echo $data       ?>  </td>
                     <td> <?php echo $status     ?>  </td>
                     <td>
                         <a class="btn btn-primary btn-sm" href="user/chamados.php?id=<?php echo $id?>" role="button"> visualizar </a>
+
                         <a class="btn btn-success btn-sm" href="adm/edita.php?id=<?php echo $id ?>" role="button" id="button_edit"> Editar </a>
                         <script> 
                             if ("<?php echo $status ?>" == 'finalizado'){
@@ -73,6 +77,43 @@
                 </tr>
                 
             <?php } ?>
+
+                        <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#modalExemplo<?php echo$id?>"> Deletar </button>
+                        <?php
+                        if($status != 'finalizado'){
+                            ?>
+                        <a class="btn btn-success btn-sm" href="adm/edita.php?id=<?php echo $id ?>" role="button" id="button_edit"> Editar </a>
+                        <?php
+                        }
+                        ?>
+
+                    </td>
+                </tr>
+               
+                <!-- Modal -->
+                <div class="modal fade" id="modalExemplo<?php echo$id?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Deseja realmente deletar esse chamado?</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                Ao deletar esse chamado todas as informações serão perdidas
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                                <a class="btn btn-danger"  href="adm/deleta.php?id=<?php echo $id?>" role="button"><i class="fa-solid fa-trash"></i> Excluir </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <?php
+            }
+            ?>
+
 
         </table>
 
