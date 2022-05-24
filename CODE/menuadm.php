@@ -61,7 +61,7 @@
                         <a class="btn btn-primary btn-sm" href="user/chamados.php?id=<?php echo $id?>" role="button"> visualizar </a>
                         <a class="btn btn-success btn-sm" href="adm/edita.php?id=<?php echo $id ?>" role="button" id="button_edit"> Editar </a>
                         <script> 
-                            if ("<?php echo $status ?>" == 'finalizadoa'){
+                            if ("<?php echo $status ?>" == 'finalizado'){
                                 document.getElementById('button_edit').setAttribute('style', 'display: none;');
                             }
                         </script>
