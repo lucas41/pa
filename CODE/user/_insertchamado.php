@@ -11,13 +11,13 @@
 
 <?php
 
-    session_start();
+session_start();
 
-    $usuario = $_SESSION['usuario'];
+$usuario = $_SESSION['usuario'];
 
-    if (!isset($_SESSION['usuario'])) {
-        header('location: index.html');
-    }
+if (!isset($_SESSION['usuario'])) {
+    header('location: index.html');
+}
 
 ?>
 
@@ -43,12 +43,12 @@
                 <label> detalhes: </label>
                 <br>
                 <div class="form-floating">
-                    <textarea name="detalhes" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                    <textarea name="detalhes" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px" required></textarea>
                 </div>
             </div>
             <div class="form-group">
                 <label> Imagem: </label>
-                <input type="file" name="imagem" class="form-control">
+                <input type="file" name="imagem" class="form-control" required>
             </div>
             <br>
             <div style="text-align: right">

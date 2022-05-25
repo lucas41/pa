@@ -6,11 +6,11 @@ $nrua = $_POST['nrua'];
 $numero = $_POST['numero'];
 $referencial = $_POST['referencial'];
 $detalhes = $_POST['detalhes'];
-$status = 'Aguardando';
+$status = 'Em análise';
 
 $nome_final = $_FILES['imagem']['name'];
 $_UP['pasta'] = '../uploads/';
-move_uploaded_file($_FILES['imagem']['tmp_name'], $_UP['pasta'] . $nome_final); 
+move_uploaded_file($_FILES['imagem']['tmp_name'], $_UP['pasta'] . $nome_final);
 
 $imagem = $nome_final;
 
@@ -26,7 +26,5 @@ try {
     $gravar->execute($novo_chamado);
     echo 'chamado registrado';
 } catch (\PDOException $err) {
-    echo "Erro ao registrar ".$err;
+    echo "Erro ao registrar " . $err;
 }
-
-?>
