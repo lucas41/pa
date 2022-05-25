@@ -18,7 +18,12 @@
     <?php
     session_start();
     $usuario = $_SESSION['usuario'];
+
     if (!isset($_SESSION['usuario'])) {
+        header('location: index.html');
+    }
+
+    if (($_SESSION['permission'] != 'ok')) {
         header('location: index.html');
     }
     ?>
