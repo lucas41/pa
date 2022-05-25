@@ -7,7 +7,8 @@ $id = $_GET['id'];
 
 
 ?>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="../css/style.css">
 
 
 <?php
@@ -22,9 +23,36 @@ foreach ($linha as $func) {
     $referencial = $func->referencial;
     $detalhes = $func->detalhes;
     $imagem = $func->imagem;
+    $status = $func->status;
 ?>
-    <div class="container" style="margin-top: 50px">
-        <h1> Informações sobre seu chamado Nº: <?php echo $id ?></h1>
+    <!-- START progressbar -->
+    <section class="multi_step_form">
+        <form id="msform">
+            <ul id="progressbar">
+                <li id="prog_analise">Em análise</li>
+                <li id="prog_progresso">Em progresso</li>
+                <li id="prog_finalizado">Finalizado</li>
+            </ul>
+            <script>
+                if ("<?php echo $status ?>" == 'Finalizado') {
+                    document.getElementById('prog_finalizado').setAttribute('class', 'active');
+                    document.getElementById('prog_progresso').setAttribute('class', 'active');
+                    document.getElementById('prog_analise').setAttribute('class', 'active');
+                }else if("<?php echo $status ?>" == 'Em progresso'){
+                    document.getElementById('prog_progresso').setAttribute('class', 'active');
+                    document.getElementById('prog_analise').setAttribute('class', 'active');
+                }else if("<?php echo $status ?>" == 'Em análise'){
+                    document.getElementById('prog_analise').setAttribute('class', 'active');
+                }
+            </script>
+        </form>
+    </section>
+    <!-- END progressbar -->
+    <div class="container">
+
+
+
+        <h1> Informações sobre seu chamado Nº: <?php echo $id ?> <?php echo $status ?></h1>
 
         <p> Localização: <?php echo $nomerua ?> Nº <?php echo $numero ?></p>
 

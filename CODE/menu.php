@@ -41,29 +41,29 @@
             </thead>
 
             <?php
-                include 'sql/sql.php';
-                $consulta = $conexao->prepare("select * from chamados where id_user=" . $_SESSION['id_user']);
-                $consulta->execute(); //todas as linhas da minha tabela
-                $linha = $consulta->fetchAll(PDO::FETCH_OBJ);
-                foreach ($linha as $func) {
-                    $id = $func->id_chamado;
-                    $nomerua = $func->nrua;
-                    $numero = $func->numero;
-                    $referencial = $func->referencial;
-                    $detalhes = $func->detalhes;
-                    $imagem = $func->imagem;
-                    $data = $func->Date;
-                    $status = $func->status;
-            
+            include 'sql/sql.php';
+            $consulta = $conexao->prepare("select * from chamados where id_user=" . $_SESSION['id_user']);
+            $consulta->execute(); //todas as linhas da minha tabela
+            $linha = $consulta->fetchAll(PDO::FETCH_OBJ);
+            foreach ($linha as $func) {
+                $id = $func->id_chamado;
+                $nomerua = $func->nrua;
+                $numero = $func->numero;
+                $referencial = $func->referencial;
+                $detalhes = $func->detalhes;
+                $imagem = $func->imagem;
+                $data = $func->Date;
+                $status = $func->status;
+
             ?>
 
-            <tr style="text-align: center;">
-                <td> <?php echo $id ?> </td>
-                <td> <?php echo $detalhes ?> </td>
-                <td> <?php echo $data ?> </td>
-                <td> <?php echo $status ?> </td>
-                <td> <a class="btn btn-primary btn-sm" style="color:white" href="user/chamados.php?id=<?php echo $id?>" role="button"><i class="fa-solid fa-pen-to-square"></i> visualizar </a> </td>
-            </tr>
+                <tr style="text-align: center;">
+                    <td> <?php echo $id ?> </td>
+                    <td> <?php echo $detalhes ?> </td>
+                    <td> <?php echo $data ?> </td>
+                    <td> <?php echo $status ?> </td>
+                    <td> <a class="btn btn-primary btn-sm" style="color:white" href="user/chamados.php?id=<?php echo $id ?>" role="button"><i class="fa-solid fa-pen-to-square"></i> visualizar </a> </td>
+                </tr>
 
             <?php } ?>
 
@@ -81,8 +81,8 @@
 
     <script>
         $(document).ready(function() {
-            $('#example').DataTable( {
-                buttons:['searchBuilder'],
+            $('#example').DataTable({
+                buttons: ['searchBuilder'],
                 dom: 'Bfrtip',
                 "language": {
                     "lengthMenu": "Mostrando _MENU_ registros por página",
@@ -91,12 +91,12 @@
                     "infoEmpty": "Nenhum registro disponível",
                     "infoFiltered": "(filtrado de _MAX_ registros no total)",
                     "paginate": {
-                        "first":      "Primeira",
-                        "last":       "Última",
-                        "next":       "Próxima",
-                        "previous":   "Anterior"
+                        "first": "Primeira",
+                        "last": "Última",
+                        "next": "Próxima",
+                        "previous": "Anterior"
                     },
-                    "search":         "Pesquisar:",
+                    "search": "Pesquisar:",
                     "searchBuilder": {
                         title: {
                             0: 'Filtro',
