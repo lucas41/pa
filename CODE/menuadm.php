@@ -22,8 +22,23 @@
         <div class="left-side-menu" id="left-side-bar">
             <div class="slimscroll-menu" id="left-side-menu-container"><a href="overview.php" class="logo text-center"><span class="logo-lg"><img src="./public/images/logo.png" height="100" id="side-main-logo"> </span></a>
 
+<<<<<<< HEAD
                 <!-- INICIO NAVBAR LATERAL -->
                 <ul class="mt-3 metismenu side-nav" id="left-bar-menu">
+=======
+    <?php
+    session_start();
+    $usuario = $_SESSION['usuario'];
+
+    if (!isset($_SESSION['usuario'])) {
+        header('location: index.html');
+    }
+
+    if (($_SESSION['permission'] != 'ok')) {
+        header('location: index.html');
+    }
+    ?>
+>>>>>>> 12ec53700fdf936164df55eec2eebd40dea9dd20
 
                     <li class="side-nav-title side-nav-item">Visão geral</li>
                     <li class="side-nav-item"><a href="overview.php" class="side-nav-link"><i class="dripicons-web"></i>
@@ -63,12 +78,48 @@
                 </div>
                 <!-- FIM NAVBAR SUPERIOR -->
 
+<<<<<<< HEAD
                 <div class="container-fluid">
                     <!-- INICIO TÍTULO CARD DA PÁGINA -->
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box">
                                 <h4 class="page-title">Todos chamados</h4>
+=======
+                    <td> <?php echo $id         ?>  </td>
+                    <td> <?php echo $detalhes   ?>  </td>
+                    <td> <?php echo $data       ?>  </td>
+                    <td> <?php echo $status     ?>  </td>
+                    <td>
+                        <a class="btn btn-primary btn-sm" href="user/chamados.php?id=<?php echo $id?>" role="button"> visualizar </a>
+
+                        <a class="btn btn-success btn-sm" href="adm/edita.php?id=<?php echo $id ?>" role="button" id="button_edit"> Editar </a>
+                        <script> 
+                            if ("<?php echo $status ?>" == 'finalizado'){
+                                document.getElementById('button_edit').setAttribute('style', 'display: none;');
+                            }
+                        </script>
+                    </td>
+                </tr>
+            
+               
+                <!-- Modal -->
+                <div class="modal fade" id="modalExemplo<?php echo$id?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Deseja realmente deletar esse chamado?</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                Ao deletar esse chamado todas as informações serão perdidas
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                                <a class="btn btn-danger"  href="adm/deleta.php?id=<?php echo $id?>" role="button"><i class="fa-solid fa-trash"></i> Excluir </a>
+>>>>>>> 12ec53700fdf936164df55eec2eebd40dea9dd20
                             </div>
                         </div>
                     </div>
@@ -164,6 +215,13 @@
                     <!-- FIM FOOTER -->
 
                 </div>
+<<<<<<< HEAD
+=======
+
+            <?php
+            }
+            ?>
+>>>>>>> 12ec53700fdf936164df55eec2eebd40dea9dd20
 
             </div>
             <script src="./js/runtime.c464bbd1982b6f37ac4e.js"></script>
