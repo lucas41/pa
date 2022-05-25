@@ -46,9 +46,9 @@ foreach ($linha as $func) {  //a cada linha, ele percorre o banco de dados (a pa
             <div class="form-group">
                 <select class="form-select" name="status" aria-label="Default select example" onchange="muda(this);">
                     <option selected> Status atual: <?php echo $status ?></option>
-                    <option value="analise">Em análise</option>
-                    <option value="progresso">Em progresso</option>
-                    <option value="finalizado">Finalizado</option>
+                    <option value="Em análise">Em análise</option>
+                    <option value="Em progresso">Em progresso</option>
+                    <option value="Finalizado">Finalizado</option>
                 </select>
             </div>
             <div class="form-group" id="caixa1" style="display: none;">
