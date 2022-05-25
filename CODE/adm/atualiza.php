@@ -10,7 +10,9 @@ $detalhes = $_POST['detalhes'];
 $status = $_POST['status'];
 $inf_fechamento = $_POST['inf_fechamento'];
 
+
 if ($status == 'finalizado'){
+
     $editar = $conexao->prepare("update chamados set nrua=?, numero=?, referencial=?, detalhes=?, status=?, inf_fechamento=? where id_chamado=? ");
     $editar->execute(array($nomerua,$numero,$referencial,$detalhes,$status,$inf_fechamento,$id));
 }else{
