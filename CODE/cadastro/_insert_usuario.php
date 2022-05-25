@@ -18,8 +18,6 @@ $senhausuario = sha1($senhausuario); //criptografando a senha com sha1
 
 
 $novo_cadastro = array($nomeusuario, $mailusuario, $telefone, $cpf, $senhausuario);
-
-
 $gravar = $conexao->prepare("insert into usuarios (nomeusuario, mailusuario,telefone,cpf,senha) values (?,?,?,?,?)");
 
 
