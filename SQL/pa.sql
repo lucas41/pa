@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.3
 -- https://www.phpmyadmin.net/
 --
--- Host: db
--- Tempo de geração: 25-Maio-2022 às 02:16
--- Versão do servidor: 10.7.3-MariaDB-1:10.7.3+maria~focal
--- versão do PHP: 8.0.19
+-- Host: 127.0.0.1
+-- Tempo de geração: 20-Maio-2022 às 03:58
+-- Versão do servidor: 10.4.24-MariaDB
+-- versão do PHP: 7.4.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,8 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `pa`
 --
-CREATE DATABASE IF NOT EXISTS `pa` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `pa`;
 
 -- --------------------------------------------------------
 
@@ -58,8 +56,7 @@ CREATE TABLE `chamados` (
   `imagem` varchar(255) NOT NULL,
   `Date` date NOT NULL DEFAULT current_timestamp(),
   `status` varchar(50) NOT NULL,
-  `id_user` int(50) NOT NULL,
-  `inf_fechamento` varchar(255) DEFAULT NULL
+  `id_user` int(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -114,13 +111,13 @@ ALTER TABLE `administradores`
 -- AUTO_INCREMENT de tabela `chamados`
 --
 ALTER TABLE `chamados`
-  MODIFY `id_chamado` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id_chamado` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_user` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_user` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Restrições para despejos de tabelas
