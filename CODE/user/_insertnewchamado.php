@@ -19,14 +19,16 @@ session_start();
 $id_user = $_SESSION['id_user'];
 
 //echo 'bem vindo ' . $_SESSION['usuario'] . ' ID = a '. $_SESSION['id_user'];
-$novo_chamado = array($nrua, $numero, $referencial, $detalhes, $imagem, $status, $id_user);
-$gravar = $conexao->prepare("insert into chamados (nrua,numero,referencial,detalhes,imagem,status,id_user) values (?,?,?,?,?,?,?)");
 
-try {
-    $gravar->execute($novo_chamado);
+$novo_chamado = array($nrua, $numero, $referencial, $detalhes, $imagem, $status, $id_user);
+
+$gravar = $conexao->prepare("insert into chamados (nrua, numero,referencial,detalhes,imagem, status, id_user) values (?,?,?,?,?,?,?)");
+
+if ($gravar->execute($novo_chamado)) {
     echo 'chamado registrado';
-} catch (\PDOException $err) {
-    echo "Erro ao registrar ".$err;
+}
+else {
+    echo 'falha ao cadastrar chamado';
 }
 
 ?>
