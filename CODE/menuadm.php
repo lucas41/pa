@@ -18,7 +18,12 @@
     <?php
     session_start();
     $usuario = $_SESSION['usuario'];
+
     if (!isset($_SESSION['usuario'])) {
+        header('location: index.html');
+    }
+
+    if (($_SESSION['permission'] != 'ok')) {
         header('location: index.html');
     }
     ?>
@@ -75,20 +80,7 @@
                         </script>
                     </td>
                 </tr>
-                
-            <?php } ?>
-
-                        <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#modalExemplo<?php echo$id?>"> Deletar </button>
-                        <?php
-                        if($status != 'finalizado'){
-                            ?>
-                        <a class="btn btn-success btn-sm" href="adm/edita.php?id=<?php echo $id ?>" role="button" id="button_edit"> Editar </a>
-                        <?php
-                        }
-                        ?>
-
-                    </td>
-                </tr>
+            
                
                 <!-- Modal -->
                 <div class="modal fade" id="modalExemplo<?php echo$id?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -110,6 +102,7 @@
                         </div>
                     </div>
                 </div>
+
             <?php
             }
             ?>
