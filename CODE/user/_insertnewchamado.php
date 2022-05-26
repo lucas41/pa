@@ -29,5 +29,4 @@ try {
     header('Location: ../menu.php');
 } catch (\PDOException $err) {
     echo $err;
-    
 }
