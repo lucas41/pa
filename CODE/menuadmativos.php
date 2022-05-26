@@ -105,7 +105,7 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box">
-                                <h4 class="page-title">Todos chamados</h4>
+                                <h4 class="page-title">Chamados Ativos</h4>
                             </div>
                         </div>
                     </div>
@@ -136,7 +136,8 @@
 
                                         <?php
                                         include 'sql/sql.php';
-                                        $consulta = $conexao->prepare("select * from chamados");
+                                        $consulta = $conexao->prepare("select * from chamados WHERE status = 'Em análise' OR status = 'Em progresso' ");
+                                     
                                         $consulta->execute();
                                         $linha = $consulta->fetchAll(PDO::FETCH_OBJ);
                                         foreach ($linha as $func) {

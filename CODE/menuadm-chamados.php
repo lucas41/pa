@@ -63,6 +63,19 @@
 
                 </div>
                 <!-- FIM NAVBAR SUPERIOR TITULO -->
+                <?php
+                    $consulta = $conexao->prepare("select * from chamados where id_chamado = $id");
+                    $consulta->execute();
+                    $linha = $consulta->fetchAll(PDO::FETCH_OBJ);
+                    foreach ($linha as $func) {
+                        $id = $func->id_chamado;
+                        $nomerua = $func->nrua;
+                        $numero = $func->numero;
+                        $referencial = $func->referencial;
+                        $detalhes = $func->detalhes;
+                        $imagem = $func->imagem;
+                        $status = $func->status;
+                ?>
 
                 <div class="container-fluid">
                     <!-- INICIO TÍTULO CARD DA PÁGINA -->
@@ -80,19 +93,7 @@
                         <div class="card-body">
                             <div class="p-lg-3">
 
-                                <?php
-                                $consulta = $conexao->prepare("select * from chamados where id_chamado = $id");
-                                $consulta->execute();
-                                $linha = $consulta->fetchAll(PDO::FETCH_OBJ);
-                                foreach ($linha as $func) {
-                                    $id = $func->id_chamado;
-                                    $nomerua = $func->nrua;
-                                    $numero = $func->numero;
-                                    $referencial = $func->referencial;
-                                    $detalhes = $func->detalhes;
-                                    $imagem = $func->imagem;
-                                    $status = $func->status;
-                                ?>
+                             
                                     <!-- START progressbar -->
                                     <section class="multi_step_form">
                                         <form id="msform">
