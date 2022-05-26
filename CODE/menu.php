@@ -53,6 +53,7 @@
                 $detalhes = $func->detalhes;
                 $imagem = $func->imagem;
                 $data = $func->Date;
+                $data = implode("/",array_reverse(explode("-",$data)));
                 $status = $func->status;
 
             ?>
