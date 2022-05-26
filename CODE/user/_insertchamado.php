@@ -15,7 +15,7 @@ session_start();
 $usuario = $_SESSION['usuario'];
 
 if (!isset($_SESSION['usuario'])) {
-    header('location: index.html');
+    header('location: ../index.html');
 }
 
 ?>

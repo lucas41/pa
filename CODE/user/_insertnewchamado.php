@@ -24,14 +24,9 @@ $novo_chamado = array($nrua, $numero, $referencial, $detalhes, $imagem, $status,
 
 $gravar = $conexao->prepare("insert into chamados (nrua, numero,referencial,detalhes,imagem, status, id_user) values (?,?,?,?,?,?,?)");
 
-if ($gravar->execute($novo_chamado)) {
-    echo 'chamado registrado';
-
+try {
+    $gravar->execute($novo_chamado);
+    header('Location: ../menu.php');
 } catch (\PDOException $err) {
-    echo "Erro ao registrar " . $err;
-=======
-}
-else {
-    echo 'falha ao cadastrar chamado';
-
+    echo $err;
 }
