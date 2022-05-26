@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: db
--- Tempo de geração: 25-Maio-2022 às 02:16
+-- Tempo de geração: 26-Maio-2022 às 02:16
 -- Versão do servidor: 10.7.3-MariaDB-1:10.7.3+maria~focal
 -- versão do PHP: 8.0.19
 
@@ -78,6 +78,13 @@ CREATE TABLE `usuarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
+-- Extraindo dados da tabela `usuarios`
+--
+
+INSERT INTO `usuarios` (`id_user`, `nomeusuario`, `mailusuario`, `telefone`, `cpf`, `senha`) VALUES
+(5, 'user', 'user@user', '123', '123', '60bddb16409a2baf76936619afecf778dabe68de');
+
+--
 -- Índices para tabelas despejadas
 --
 
@@ -114,13 +121,13 @@ ALTER TABLE `administradores`
 -- AUTO_INCREMENT de tabela `chamados`
 --
 ALTER TABLE `chamados`
-  MODIFY `id_chamado` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id_chamado` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_user` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_user` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Restrições para despejos de tabelas
