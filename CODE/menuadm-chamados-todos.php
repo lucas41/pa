@@ -158,6 +158,7 @@
                                             $id = $func->id_chamado;
                                             $detalhes = $func->detalhes;
                                             $data = $func->Date;
+                                            $data = implode("/",array_reverse(explode("-",$data)));
                                             $status = $func->status;
 
                                         ?>
