@@ -57,27 +57,27 @@
 
     <div class="wrapper">
         <div class="left-side-menu" id="left-side-bar">
-            <div class="slimscroll-menu" id="left-side-menu-container"><a href="overview.php" class="logo text-center"><span class="logo-lg"><img src="./public/images/logo.png" height="100" id="side-main-logo"> </span></a>
+            <div class="slimscroll-menu" id="left-side-menu-container"><a href="#" class="logo text-center"><span class="logo-lg"><img src="./public/images/logo.png" height="100" id="side-main-logo"> </span></a>
 
                 <!-- INICIO NAVBAR LATERAL -->
                 <ul class="mt-3 metismenu side-nav" id="left-bar-menu">
 
                     <li class="side-nav-title side-nav-item">Visão geral</li>
-                    <li class="side-nav-item"><a href="overview.php" class="side-nav-link"><i class="dripicons-web"></i>
+                    <li class="side-nav-item"><a href="#" class="side-nav-link"><i class="dripicons-web"></i>
                             <span>Chamados/Usuários</span></a></li>
 
                     <li class="side-nav-title side-nav-item mt-2">Chamados</li>
-                    <li class="side-nav-item"><a href="menuadm.php" class="side-nav-link"><i class="dripicons-view-list"></i>
+                    <li class="side-nav-item"><a href="menuadm-chamados-todos.php" class="side-nav-link"><i class="dripicons-view-list"></i>
                             <span>Todos chamados</span></a></li>
-                    <li class="side-nav-item"><a href="menuadmativos.php" class="side-nav-link"><i class="dripicons-view-list"></i>
+                    <li class="side-nav-item"><a href="menuadm-chamados-ativos.php" class="side-nav-link"><i class="dripicons-view-list"></i>
                             <span>Chamados ativos</span></a></li>
-                    <li class="side-nav-item"><a href="menuadmfechados.php" class="side-nav-link"><i class="dripicons-view-list"></i>
+                    <li class="side-nav-item"><a href="menuadm-chamados-finalizados.php" class="side-nav-link"><i class="dripicons-view-list"></i>
                             <span>Chamados finalizados</span></a></li>
 
                     <li class="side-nav-title side-nav-item mt-2">Usuários</li>
-                    <li class="side-nav-item"><a href="pages-themes.html" class="side-nav-link"><i class="dripicons-user-group"></i>
+                    <li class="side-nav-item"><a href="#" class="side-nav-link"><i class="dripicons-user-group"></i>
                             <span>Todos Usuários</span></a></li>
-                    <li class="side-nav-item"><a href="pages-themes.html" class="side-nav-link"><i class="dripicons-user"></i>
+                    <li class="side-nav-item"><a href="#" class="side-nav-link"><i class="dripicons-user"></i>
                             <span>Outros</span></a></li>
 
                 </ul>
@@ -118,9 +118,6 @@
 
                                 <!-- INICIO CONTEUDO CARD -->
 
-
-
-
                                 <div class="container" style="margin-top: 40px">
 
                                     <table id="example" style="width:100%" class="table">
@@ -159,9 +156,9 @@
                                                 <td> <?php echo $data       ?> </td>
                                                 <td> <?php echo $status     ?> </td>
                                                 <td>
-                                                    <a class="btn btn-primary btn-sm" href="menuadm-chamados.php?id=<?php echo $id ?>" role="button"> visualizar </a>
+                                                    <a class="btn btn-primary btn-sm" href="menuadm-chamado.php?id=<?php echo $id ?>" role="button"> visualizar </a>
 
-                                                    <button type="button" data-toggle=modal data-target=#modalExemplo<?php echo $id ?> class="btn btn-sm btn-success" id="button_edit"> Atualizar Status </button>
+                                                    <button type="button" data-toggle=modal data-target=#modalExemplo<?php echo $id ?> class="btn btn-sm btn-success"> Atualizar Status </button>
 
                                                     <!-- Modal -->
                                                     <div class="modal fade" id="modalExemplo<?php echo $id ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -313,11 +310,6 @@
                 }
             </script>
 
-            <script>
-                if ("<?php echo $status ?>" == 'Finalizado') {
-                    document.getElementById('button_edit').setAttribute('style', 'display: none;');
-                }
-            </script>
             <script>
                 new bootstrap.Toast(toastNotice).show();
             </script>

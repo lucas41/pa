@@ -26,58 +26,76 @@
     $usuario = $_SESSION['usuario'];
 
     if (!isset($_SESSION['usuario'])) {
-        header('location: ../index.html');
+        header('location: ./index.html');
     }
 
     if (($_SESSION['permission'] != 'ok')) {
-        header('location: ../index.html');
+        header('location: ./index.html');
     }
 
     if (isset($_SESSION['message'])) {
+        if ($_SESSION['messageID'] == 1) {
     ?>
-        <center>
-            <br>
-            <div aria-live="polite" aria-atomic="true" class="position-relative" >
-                <div class="toast-container position-absolute align-items-center w-100">
-                    <div id="toastNotice" class="toast align-items-center text-white bg-success bg-gradient border-0" role="alert" aria-live="assertive" aria-atomic="true" data-autohide="false">
-                        <div class="d-flex">
-                            <div class="toast-body">
-                                <?php echo $_SESSION['message'] ?>
+            <center>
+                <br>
+                <div aria-live="polite" aria-atomic="true" class="position-relative">
+                    <div class="toast-container position-absolute align-items-center w-100">
+                        <div id="toastNotice" class="toast align-items-center text-white bg-success bg-gradient border-0" role="alert" aria-live="assertive" aria-atomic="true" data-autohide="false">
+                            <div class="d-flex">
+                                <div class="toast-body">
+                                    <?php echo $_SESSION['message'] ?>
+                                </div>
+                                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
                             </div>
-                            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
                         </div>
                     </div>
                 </div>
-            </div>
-        </center>
+            </center>
+        <?php } else { ?>
+            <center>
+                <br>
+                <div aria-live="polite" aria-atomic="true" class="position-relative">
+                    <div class="toast-container position-absolute align-items-center w-100">
+                        <div id="toastNotice" class="toast align-items-center text-white bg-danger bg-gradient border-0" role="alert" aria-live="assertive" aria-atomic="true" data-autohide="false">
+                            <div class="d-flex">
+                                <div class="toast-body">
+                                    <?php echo $_SESSION['message'] ?>
+                                </div>
+                                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </center>
 
     <?php
+        }
         $_SESSION['message'] = NULL;
     } ?>
 
     <div class="wrapper">
         <div class="left-side-menu" id="left-side-bar">
-            <div class="slimscroll-menu" id="left-side-menu-container"><a href="overview.php" class="logo text-center"><span class="logo-lg"><img src="./public/images/logo.png" height="100" id="side-main-logo"> </span></a>
+            <div class="slimscroll-menu" id="left-side-menu-container"><a href="#" class="logo text-center"><span class="logo-lg"><img src="./public/images/logo.png" height="100" id="side-main-logo"> </span></a>
 
                 <!-- INICIO NAVBAR LATERAL -->
                 <ul class="mt-3 metismenu side-nav" id="left-bar-menu">
 
                     <li class="side-nav-title side-nav-item">Visão geral</li>
-                    <li class="side-nav-item"><a href="overview.php" class="side-nav-link"><i class="dripicons-web"></i>
+                    <li class="side-nav-item"><a href="#" class="side-nav-link"><i class="dripicons-web"></i>
                             <span>Chamados/Usuários</span></a></li>
 
                     <li class="side-nav-title side-nav-item mt-2">Chamados</li>
-                    <li class="side-nav-item"><a href="menuadm.php" class="side-nav-link"><i class="dripicons-view-list"></i>
+                    <li class="side-nav-item"><a href="menuadm-chamados-todos.php" class="side-nav-link"><i class="dripicons-view-list"></i>
                             <span>Todos chamados</span></a></li>
-                    <li class="side-nav-item"><a href="menuadmativos.php" class="side-nav-link"><i class="dripicons-view-list"></i>
+                    <li class="side-nav-item"><a href="menuadm-chamados-ativos.php" class="side-nav-link"><i class="dripicons-view-list"></i>
                             <span>Chamados ativos</span></a></li>
-                    <li class="side-nav-item"><a href="menuadmfechados.php" class="side-nav-link"><i class="dripicons-view-list"></i>
+                    <li class="side-nav-item"><a href="menuadm-chamados-finalizados.php" class="side-nav-link"><i class="dripicons-view-list"></i>
                             <span>Chamados finalizados</span></a></li>
 
                     <li class="side-nav-title side-nav-item mt-2">Usuários</li>
-                    <li class="side-nav-item"><a href="pages-themes.html" class="side-nav-link"><i class="dripicons-user-group"></i>
+                    <li class="side-nav-item"><a href="#" class="side-nav-link"><i class="dripicons-user-group"></i>
                             <span>Todos Usuários</span></a></li>
-                    <li class="side-nav-item"><a href="pages-themes.html" class="side-nav-link"><i class="dripicons-user"></i>
+                    <li class="side-nav-item"><a href="#" class="side-nav-link"><i class="dripicons-user"></i>
                             <span>Outros</span></a></li>
 
                 </ul>
@@ -118,9 +136,6 @@
 
                                 <!-- INICIO CONTEUDO CARD -->
 
-
-
-
                                 <div class="container" style="margin-top: 40px">
 
                                     <table id="example" style="width:100%" class="table">
@@ -141,15 +156,13 @@
                                         $linha = $consulta->fetchAll(PDO::FETCH_OBJ);
                                         foreach ($linha as $func) {
                                             $id = $func->id_chamado;
-                                            $nomerua = $func->nrua;
-                                            $numero = $func->numero;
-                                            $referencial = $func->referencial;
                                             $detalhes = $func->detalhes;
-                                            $imagem = $func->imagem;
                                             $data = $func->Date;
                                             $data = implode("/",array_reverse(explode("-",$data)));
                                             $status = $func->status;
+
                                         ?>
+
 
                                             <tr style="text-align: center;">
 
@@ -158,10 +171,16 @@
                                                 <td> <?php echo $data       ?> </td>
                                                 <td> <?php echo $status     ?> </td>
                                                 <td>
-                                                    <a class="btn btn-primary btn-sm" href="menuadm-chamados.php?id=<?php echo $id ?>" role="button"> visualizar </a>
+                                                    <a class="btn btn-primary btn-sm" href="menuadm-chamado.php?id=<?php echo $id ?>" role="button"> visualizar </a>
 
-                                                    <button type="button" data-toggle=modal data-target=#modalExemplo<?php echo $id ?> class="btn btn-sm btn-success" id="button_edit"> Atualizar Status </button>
-
+                                                    <button type="button" data-toggle=modal data-target=#modalExemplo<?php echo $id ?> class="btn btn-sm btn-success" id="button_edit<?php echo $id ?>"> Atualizar Status </button>
+                                                    <!-- 
+                                                    <script>
+                                                        if ("<?php echo $status ?>" == 'Finalizado') {
+                                                            document.getElementById('button_edit<?php echo $id ?>').style.display = "none";
+                                                        }
+                                                    </script>
+                                                    -->
                                                     <!-- Modal -->
                                                     <div class="modal fade" id="modalExemplo<?php echo $id ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                         <div class="modal-dialog" role="document">
@@ -198,6 +217,23 @@
                                                                                 <b>Ao finalizar esse chamado não será mais possivel editar!</b>
                                                                             </div>
                                                                         </div>
+                                                                        <script type='text/javascript'>
+                                                                            function muda(obj) {
+                                                                                var index = obj.selectedIndex;
+                                                                                var option = obj.options[index].value;
+                                                                                //document.write(option);
+                                                                                if (option == 'Finalizado') {
+                                                                                    document.getElementById('caixa1').style.display = "block";
+
+                                                                                } else if (option == 'Em análise') {
+                                                                                    document.getElementById('caixa1').style.display = "none";
+
+                                                                                } else if (option == 'Em progresso') {
+                                                                                    document.getElementById('caixa1').style.display = "none";
+
+                                                                                }
+                                                                            }
+                                                                        </script>
                                                                         <br>
                                                                         <!-- FIM FORM STATUS -->
 
@@ -292,31 +328,8 @@
                 });
             </script>
 
-            <script type='text/javascript'>
-                function muda(obj) {
-                    var index = obj.selectedIndex;
-                    var option = obj.options[index].value;
-                    if (option == 'Finalizado') {
-                        document.getElementById('caixa1').style.display = "block";
 
 
-                    } else
-                    if (option == 'Em análise') {
-                        document.getElementById('caixa1').style.display = "none";
-
-                    } else
-                    if (option == 'Em progresso') {
-                        document.getElementById('caixa1').style.display = "none";
-
-                    }
-                }
-            </script>
-
-            <script>
-                if ("<?php echo $status ?>" == 'Finalizado') {
-                    document.getElementById('button_edit').setAttribute('style', 'display: none;');
-                }
-            </script>
             <script>
                 new bootstrap.Toast(toastNotice).show();
             </script>
