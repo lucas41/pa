@@ -21,27 +21,27 @@
     ?>
     <div class="wrapper">
         <div class="left-side-menu" id="left-side-bar">
-            <div class="slimscroll-menu" id="left-side-menu-container"><a href="area_adm_index.php" class="logo text-center"><span class="logo-lg"><img src="./public/images/logo.png" height="100" id="side-main-logo"> </span></a>
+            <div class="slimscroll-menu" id="left-side-menu-container"><a href="#" class="logo text-center"><span class="logo-lg"><img src="./public/images/logo.png" height="100" id="side-main-logo"> </span></a>
 
                 <!-- INICIO NAVBAR LATERAL -->
                 <ul class="mt-3 metismenu side-nav" id="left-bar-menu">
 
                     <li class="side-nav-title side-nav-item">Visão geral</li>
-                    <li class="side-nav-item"><a href="overview.php" class="side-nav-link"><i class="dripicons-web"></i>
+                    <li class="side-nav-item"><a href="#" class="side-nav-link"><i class="dripicons-web"></i>
                             <span>Chamados/Usuários</span></a></li>
 
                     <li class="side-nav-title side-nav-item mt-2">Chamados</li>
-                    <li class="side-nav-item"><a href="menuadm.php" class="side-nav-link"><i class="dripicons-view-list"></i>
+                    <li class="side-nav-item"><a href="menuadm-chamados-todos.php" class="side-nav-link"><i class="dripicons-view-list"></i>
                             <span>Todos chamados</span></a></li>
-                    <li class="side-nav-item"><a href="pages-themes.html" class="side-nav-link"><i class="dripicons-view-list"></i>
+                    <li class="side-nav-item"><a href="menuadm-chamados-ativos.php" class="side-nav-link"><i class="dripicons-view-list"></i>
                             <span>Chamados ativos</span></a></li>
-                    <li class="side-nav-item"><a href="pages-themes.html" class="side-nav-link"><i class="dripicons-view-list"></i>
+                    <li class="side-nav-item"><a href="menuadm-chamados-finalizados.php" class="side-nav-link"><i class="dripicons-view-list"></i>
                             <span>Chamados finalizados</span></a></li>
 
                     <li class="side-nav-title side-nav-item mt-2">Usuários</li>
-                    <li class="side-nav-item"><a href="pages-themes.html" class="side-nav-link"><i class="dripicons-user-group"></i>
+                    <li class="side-nav-item"><a href="#" class="side-nav-link"><i class="dripicons-user-group"></i>
                             <span>Todos Usuários</span></a></li>
-                    <li class="side-nav-item"><a href="pages-themes.html" class="side-nav-link"><i class="dripicons-user"></i>
+                    <li class="side-nav-item"><a href="#" class="side-nav-link"><i class="dripicons-user"></i>
                             <span>Outros</span></a></li>
 
                 </ul>
@@ -93,7 +93,6 @@
                         <div class="card-body">
                             <div class="p-lg-3">
 
-                             
                                     <!-- START progressbar -->
                                     <section class="multi_step_form">
                                         <form id="msform">
@@ -118,8 +117,6 @@
                                     </section>
                                     <!-- END progressbar -->
                                     <div class="container">
-
-                                        
 
                                         <p> Localização: <?php echo $nomerua ?> Nº <?php echo $numero ?></p>
 
