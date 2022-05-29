@@ -223,19 +223,6 @@
                     </div>
                     <!-- FIM CARD CARD DA PÁGINA -->
 
-                    <!-- INICIO FOOTER -->
-                    <footer class="footer">
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="col-md-6">2018 - 2021 © Hyper - Coderthemes.com</div>
-                                <div class="col-md-6">
-                                    <div class="text-md-right footer-links d-none d-md-block"><a href="https://coderthemes.com/" target="_blank">About</a> <a href="https://coderthemes.com/" target="_blank">Support</a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </footer>
-                    <!-- FIM FOOTER -->
-
                 </div>
 
             </div>
