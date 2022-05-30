@@ -1,11 +1,11 @@
 <?php
 
 
-$host = 'db';
+$host = 'localhost';
 
 define('USER', 'root');
 
-define('PASSWORD', 'root');
+define('PASSWORD', '');
 
 define('DB_NAME', 'pa');
 
