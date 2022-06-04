@@ -48,9 +48,7 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="./user/_insertchamado.php">Abrir chamado</a></li>
-          <li><a class="nav-link scrollto" href="#">Ver todos os chamados</a></li>
+
           <li><a class="getstarted scrollto" href="#" data-bs-toggle="modal" data-bs-target="#cadastro">Cadastrar</a>
           </li>
           <li><a class="getstarted scrollto" href="#" data-bs-toggle="modal" data-bs-target="#login">Login</a></li>
