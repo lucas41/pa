@@ -80,9 +80,6 @@
                 <input type="submit" class="fadeIn" value="Entrar">
               </form>
               <!-- Remind Passowrd -->
-              <div id="formFooter">
-                <a class="underlineHover" href="../cadastro/cadastro.html">Ainda não poissui cadastro clique aqui</a>
-              </div>
             </div>
           </div>
         </div>

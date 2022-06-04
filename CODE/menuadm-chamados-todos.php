@@ -76,7 +76,11 @@
     <div class="wrapper">
         <div class="left-side-menu" id="left-side-bar">
             <div class="slimscroll-menu" id="left-side-menu-container"><a href="#" class="logo text-center"><span class="logo-lg"><img src="./public/images/logo.png" height="100" id="side-main-logo"> </span></a>
-            <STYLE>A {text-decoration: none;} </STYLE>
+                <STYLE>
+                    A {
+                        text-decoration: none;
+                    }
+                </STYLE>
                 <!-- INICIO NAVBAR LATERAL -->
                 <ul class="mt-3 metismenu side-nav" id="left-bar-menu">
 
@@ -88,7 +92,7 @@
                     <li class="side-nav-item"><a href="menuadm-chamados-todos.php" class="side-nav-link"><i class="dripicons-view-list"></i>
                             <span>Todos chamados</span></a></li>
                     <li class="side-nav-item"><a href="menuadm-chamados-ativos.php" class="side-nav-link"><i class="dripicons-view-list"></i>
-                            <span >Chamados ativos</span></a></li>
+                            <span>Chamados ativos</span></a></li>
                     <li class="side-nav-item"><a href="menuadm-chamados-finalizados.php" class="side-nav-link"><i class="dripicons-view-list"></i>
                             <span>Chamados finalizados</span></a></li>
 
@@ -158,7 +162,7 @@
                                             $id = $func->id_chamado;
                                             $detalhes = $func->detalhes;
                                             $data = $func->Date;
-                                            $data = implode("/",array_reverse(explode("-",$data)));
+                                            $data = implode("/", array_reverse(explode("-", $data)));
                                             $status = $func->status;
 
                                         ?>
@@ -174,13 +178,13 @@
                                                     <a class="btn btn-primary btn-sm" href="menuadm-chamado.php?id=<?php echo $id ?>" role="button"> visualizar </a>
 
                                                     <button type="button" data-toggle=modal data-target=#modalExemplo<?php echo $id ?> class="btn btn-sm btn-success" id="button_edit<?php echo $id ?>"> Atualizar Status </button>
-                                                    <!-- 
+
                                                     <script>
                                                         if ("<?php echo $status ?>" == 'Finalizado') {
                                                             document.getElementById('button_edit<?php echo $id ?>').style.display = "none";
                                                         }
                                                     </script>
-                                                    -->
+
                                                     <!-- Modal -->
                                                     <div class="modal fade" id="modalExemplo<?php echo $id ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                         <div class="modal-dialog" role="document">
@@ -200,14 +204,14 @@
                                                                         <h4>Status atual: <?php echo $status ?></h4>
                                                                         <input type="number" class="form-control" name="id" value="<?php echo $id ?>" style="display: none">
                                                                         <div class="form-group">
-                                                                            <select class="form-select" name="status" aria-label="Default select example" onchange="muda(this);">
+                                                                            <select class="form-select" name="status" aria-label="Default select example" onchange="muda(this, <?php echo $id ?>);">
                                                                                 <option style="display:none;" selected>Selecione o status</option>
                                                                                 <option value="Em análise">Em análise</option>
                                                                                 <option value="Em progresso">Em progresso</option>
                                                                                 <option value="Finalizado">Finalizado</option>
                                                                             </select>
                                                                         </div>
-                                                                        <div class="form-group" id="caixa1" style="display: none;">
+                                                                        <div class="form-group" id="caixa<?php echo $id ?>" style="display: none;">
                                                                             <br> <label> Informações de fechamento: </label> <br>
                                                                             <div class="form-floating">
                                                                                 <textarea name="inf_fechamento" class="form-control" id="floatingTextarea2" style="height: 100px" require></textarea>
@@ -316,7 +320,25 @@
                 });
             </script>
 
+            <script type='text/javascript'>
+                function muda(obj, id) {
+                    var index = obj.selectedIndex;
+                    var option = obj.options[index].value;
+                    if (option == 'Finalizado') {
+                        document.getElementById('caixa' + id).style.display = "block";
 
+
+                    } else
+                    if (option == 'Em análise') {
+                        document.getElementById('caixa' + id).style.display = "none";
+
+                    } else
+                    if (option == 'Em progresso') {
+                        document.getElementById('caixa' + id).style.display = "none";
+
+                    }
+                }
+            </script>
 
             <script>
                 new bootstrap.Toast(toastNotice).show();

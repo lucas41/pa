@@ -78,7 +78,7 @@ foreach ($linha as $func) {
                             <p class="card-text"> Referencia: <?php echo $referencial ?></p>
                             <div class="mb-3">
                                 <label for="exampleFormControlTextarea1" class="form-label"><b>Detalhes da ocorrencia</b></label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"> <?php echo $detalhes ?></textarea>
+                                <textarea readonly class="form-control" id="exampleFormControlTextarea1" rows="3"> <?php echo $detalhes ?></textarea>
                             </div>
                         </div>
                     </div>
@@ -106,7 +106,7 @@ foreach ($linha as $func) {
                             <div class="container">
                             <div class="mb-3">
                                 <label for="exampleFormControlTextarea1" class="form-label"><b>Informações de Encerramento do chamado</b></label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"><?php echo $inf_fechamento ?></textarea>
+                                <textarea readonly class="form-control" id="exampleFormControlTextarea1" rows="3"><?php echo $inf_fechamento ?></textarea>
                         <?php
                     }
                 ?>

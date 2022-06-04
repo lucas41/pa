@@ -47,10 +47,6 @@ $verificacpf = $cpf;
  }
 }
 
-
-
-
-
 $cpf = md5($cpf);
 $cpf = sha1($cpf);
 $senhausuario = md5($senhausuario); // criptografando a senha com md5
