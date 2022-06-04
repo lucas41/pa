@@ -7,15 +7,9 @@ $usuario = $_POST['usuario'];
 $senhausuario = $_POST['senha'];
 
 $consulta = $conexao->prepare("select email,senha,nome FROM administradores WHERE email = '$usuario'");
-
-
-//$buscar - mysqli_query($conexao,$sql)
 $consulta->execute();
 
-// $total - mysqli_num_rows($buscar)
-
 $total = $consulta->rowCount();
-
 
 $linha = $consulta->fetchall(PDO::FETCH_OBJ);
 
@@ -32,31 +26,21 @@ foreach($linha as $func){
  
     $senhadecodificada = sha1($senhadecodificada); 
 
- 
-
     if($total > 0){ // verifica se a pesquisa encontrou ao menos um cadastro no banco de dados
         
         if($senhadecodificada == $senha){ // compara a senha que vem do banco com a senha envida pelo post ja criptografada
    
-        session_start();
-        $_SESSION['usuario'] = $nomeusuario; // inicia nova sessão e passa o nome da pessoa
-        $_SESSION['permission'] = $permissao;
-        
-        header('Location: ../menuadm-chamados-todos.php'); // renderiza o menu
+            session_start();
+            $_SESSION['usuario'] = $nomeusuario; // inicia nova sessão e passa o nome da pessoa
+            $_SESSION['permission'] = $permissao;
+            
+            header('Location: ../menuadm-chamados-todos.php'); // renderiza o menu
+        } else {
+            header('Location: ../scripts/erro.php'); // eniva para a pagina de erro
+        }
     } else {
-        header('Location: ../scripts/erro.php'); // eniva para a pagina de erro
+        header('Location: ../scripts/erro.php');// eniva para a pagina de erro
     }
-} else {
-    header('Location: ../scripts/erro.php');// eniva para a pagina de erro
-}
      
-
-   
-   }
+}
 ?>
-
-
-
-
-
-

@@ -72,9 +72,9 @@
             <div id="formContent">
               <!-- Login Form -->
               <form action="login/login.php" method="post"><br>
-                <input type="email" name="usuario" class="fadeIn" placeholder="email" required>
-                <input type="password" name="senha" class="fadeIn" placeholder="senha" required> <br><br>
-                <input type="submit" class="fadeIn" value="Entrar">
+                <input type="email" name="usuario"  placeholder="email" required>
+                <input type="password" name="senha"  placeholder="senha" required> <br><br>
+                <input type="submit"  value="Entrar">
               </form>
               <!-- Remind Passowrd -->
             </div>
@@ -98,14 +98,14 @@
           <div class="wrapper">
             <div id="formContent">
               <form action="cadastro/_insert_usuario.php" method="post"><br>
-                <input type="text" name="nomeusuario" class="fadeIn" placeholder="Nome" required autocomplete="off">
-                <input type="email" name="mailusuario" class="fadeIn" placeholder="Email" required autocomplete="off">
-                <input type="number" name="telefone" class="fadeIn" placeholder="Telefone" required autocomplete="off">
-                <input type="number" name="cpf" class="fadeIn" placeholder="CPF" required autocomplete="off">
-                <input type="password" name="senhausuario" class="fadeIn" placeholder="senha" required autocomplete="off">
-                <input type="password" name="Repetir Senha" class="fadeIn" placeholder="Confirme a senha" required oninput="validaSenha(this)" autocomplete="off">
+                <input type="text" name="nomeusuario"  placeholder="Nome" required autocomplete="off">
+                <input type="email" name="mailusuario"  placeholder="Email" required autocomplete="off">
+                <input type="number" name="telefone"  placeholder="Telefone" required autocomplete="off">
+                <input type="number" name="cpf"  placeholder="CPF" required autocomplete="off">
+                <input type="password" name="senhausuario"  placeholder="senha" required autocomplete="off">
+                <input type="password" name="Repetir Senha"  placeholder="Confirme a senha" required oninput="validaSenha(this)" autocomplete="off">
                 <br><br>
-                <input type="submit" class="fadeIn" value="Cadastrar ">
+                <input type="submit"  value="Cadastrar ">
                 <script>
                   function validaSenha(input) {
                     if (input.value != document.getElementById(' ').value) {
