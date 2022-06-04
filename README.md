@@ -27,7 +27,7 @@ Foram ultilizados as seguintes ferramentas para criação deste website
 </div>
 <br>
 
-<h2>Feito com  <img src="https://cdn-icons.flaticon.com/png/512/2589/premium/2589175.png?token=exp=1652579149~hmac=3ef85878e64de43868c2fe629f1ee5c6" style="width: 30px; height: 30px"> e <img src="https://cdn-icons.flaticon.com/png/512/400/premium/400821.png?token=exp=1652579089~hmac=afafed686c7c7d50ae30d4a6adf5afc1" style="width: 30px; height: 30px"> </h2>
+
 
 
 
