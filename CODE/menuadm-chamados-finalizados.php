@@ -61,7 +61,7 @@
 
                 <!-- INICIO NAVBAR LATERAL -->
                 <ul class="mt-3 metismenu side-nav" id="left-bar-menu">
-
+                <STYLE>A {text-decoration: none;} </STYLE>
                     <li class="side-nav-title side-nav-item">Visão geral</li>
                     <li class="side-nav-item"><a href="#" class="side-nav-link"><i class="dripicons-web"></i>
                             <span>Chamados/Usuários</span></a></li>

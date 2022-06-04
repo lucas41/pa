@@ -34,10 +34,14 @@ foreach($linha as $func){
 
             header('Location: ../menu.php'); // renderiza o menu
         } else {
-            header('Location: ../scripts/erro.php'); // eniva para a pagina de erro
+            session_start();
+            $_SESSION['msg_error'] = 'Falha ao digitar a senha tente novamente';
+            header("location: ../index.php");
         }
     } else {
-        header('Location: ../scripts/erro.php');// eniva para a pagina de erro
+         session_start();
+        $_SESSION['msg_error'] = 'Falha ao digitar a senha tente novamente';
+        header("location: ../index.php");
     }
    
 }

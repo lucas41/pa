@@ -24,6 +24,7 @@ foreach ($linha as $func) {
     $detalhes = $func->detalhes;
     $imagem = $func->imagem;
     $status = $func->status;
+    $inf_fechamento = $func->inf_fechamento;
 ?>
     <div class="container" style="margin-top: 40px">
         <div class="card m-b-30">
@@ -93,11 +94,22 @@ foreach ($linha as $func) {
                         <div class="col-6">
                             <h1> Imagem </h1>
                             <br>
-                            <img src="../uploads/<?php echo $imagem ?>" style="width: 600px; hight: 600px">
+                            <img src="../uploads/<?php echo $imagem ?>" width="600" height="335">
                         </div>
                     </div>
                 </div>
 
+                <?php 
+                    if ($inf_fechamento != null){
+                        ?>
+                        <br><br>
+                            <div class="container">
+                            <div class="mb-3">
+                                <label for="exampleFormControlTextarea1" class="form-label"><b>Informações de Encerramento do chamado</b></label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"><?php echo $inf_fechamento ?></textarea>
+                        <?php
+                    }
+                ?>
 
                 <br>
                 <div style="text-align: left">

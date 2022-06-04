@@ -76,7 +76,7 @@
     <div class="wrapper">
         <div class="left-side-menu" id="left-side-bar">
             <div class="slimscroll-menu" id="left-side-menu-container"><a href="#" class="logo text-center"><span class="logo-lg"><img src="./public/images/logo.png" height="100" id="side-main-logo"> </span></a>
-
+            <STYLE>A {text-decoration: none;} </STYLE>
                 <!-- INICIO NAVBAR LATERAL -->
                 <ul class="mt-3 metismenu side-nav" id="left-bar-menu">
 
@@ -88,7 +88,7 @@
                     <li class="side-nav-item"><a href="menuadm-chamados-todos.php" class="side-nav-link"><i class="dripicons-view-list"></i>
                             <span>Todos chamados</span></a></li>
                     <li class="side-nav-item"><a href="menuadm-chamados-ativos.php" class="side-nav-link"><i class="dripicons-view-list"></i>
-                            <span>Chamados ativos</span></a></li>
+                            <span >Chamados ativos</span></a></li>
                     <li class="side-nav-item"><a href="menuadm-chamados-finalizados.php" class="side-nav-link"><i class="dripicons-view-list"></i>
                             <span>Chamados finalizados</span></a></li>
 

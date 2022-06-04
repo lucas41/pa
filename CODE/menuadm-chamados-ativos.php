@@ -26,11 +26,11 @@
     $usuario = $_SESSION['usuario'];
 
     if (!isset($_SESSION['usuario'])) {
-        header('location: ../index.html');
+        header('location: index.php');
     }
 
     if (($_SESSION['permission'] != 'ok')) {
-        header('location: ../index.html');
+        header('location: index.php');
     }
 
     if (isset($_SESSION['message'])) {
@@ -58,7 +58,7 @@
     <div class="wrapper">
         <div class="left-side-menu" id="left-side-bar">
             <div class="slimscroll-menu" id="left-side-menu-container"><a href="#" class="logo text-center"><span class="logo-lg"><img src="./public/images/logo.png" height="100" id="side-main-logo"> </span></a>
-
+            <STYLE>A {text-decoration: none;} </STYLE>
                 <!-- INICIO NAVBAR LATERAL -->
                 <ul class="mt-3 metismenu side-nav" id="left-bar-menu">
 
