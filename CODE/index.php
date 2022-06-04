@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -12,11 +13,8 @@
   <!-- Vendor CSS Files -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
   <link href="./css/css-index/aos/aos.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-    crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="css/style-login.css">
 
   <!-- Template Main CSS File -->
@@ -29,17 +27,18 @@
   ======================================================== -->
 
 </head>
+
 <body>
-<?php
-    session_start();
-    if(isset($_SESSION['msg_sucess']) && !empty($_SESSION['msg_sucess'])){
-      $status = $_SESSION['msg_sucess'];
-    }
-    if(isset($_SESSION['msg_error']) && !empty($_SESSION['msg_error'])){
-        $status = $_SESSION['msg_error'];
-    }
-    session_destroy();
-    ?>
+  <?php
+  session_start();
+  if (isset($_SESSION['msg_sucess']) && !empty($_SESSION['msg_sucess'])) {
+    $status = $_SESSION['msg_sucess'];
+  }
+  if (isset($_SESSION['msg_error']) && !empty($_SESSION['msg_error'])) {
+    $status = $_SESSION['msg_error'];
+  }
+  session_destroy();
+  ?>
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top ">
     <div class="container d-flex align-items-center">
@@ -57,7 +56,7 @@
       </nav><!-- .navbar -->
     </div>
   </header><!-- End Header -->
-  
+
   <!-- MOdal section -->
 
   <!-- Modal de login -->
@@ -103,20 +102,19 @@
                 <input type="email" name="mailusuario" class="fadeIn" placeholder="Email" required autocomplete="off">
                 <input type="number" name="telefone" class="fadeIn" placeholder="Telefone" required autocomplete="off">
                 <input type="number" name="cpf" class="fadeIn" placeholder="CPF" required autocomplete="off">
-                <input type="password" name="senhausuario" class="fadeIn" placeholder="senha" required autocomplete="off" >
-                <input type="password" name="Repetir Senha" class="fadeIn" placeholder="Confirme a senha" required
-                  oninput="validaSenha(this)" autocomplete="off">
+                <input type="password" name="senhausuario" class="fadeIn" placeholder="senha" required autocomplete="off">
+                <input type="password" name="Repetir Senha" class="fadeIn" placeholder="Confirme a senha" required oninput="validaSenha(this)" autocomplete="off">
                 <br><br>
                 <input type="submit" class="fadeIn" value="Cadastrar ">
                 <script>
                   function validaSenha(input) {
-                      if (input.value != document.getElementById(' ').value) {
-                          input.setCustomValidity('Repita a senha corretamente');
-                      } else {
-                          input.setCustomValidity('');
-                      }
+                    if (input.value != document.getElementById(' ').value) {
+                      input.setCustomValidity('Repita a senha corretamente');
+                    } else {
+                      input.setCustomValidity('');
+                    }
                   }
-              </script>
+                </script>
               </form>
             </div>
           </div>
@@ -131,8 +129,7 @@
   <section id="hero" class="d-flex align-items-center">
     <div class="container">
       <div class="row">
-        <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1"
-          data-aos="fade-up" data-aos-delay="200">
+        <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
           <h1>Gestão de incidentes urbanos</h1>
           <h2>Sistema focado na abertura de chamados sobre problemas encontrados nos bairros</h2>
           <div class="d-flex justify-content-center justify-content-lg-start">
@@ -148,6 +145,10 @@
 
   <main id="main">
     <!-- ======= About Us Section ======= -->
+
+
+
+
     <section id="about" class="about">
       <div class="container" data-aos="fade-up">
 
@@ -189,7 +190,7 @@
       </div>
     </div>
   </footer><!-- End Footer -->
-    
+
 
 
 
@@ -198,16 +199,12 @@
   <script src="./js/js-index/glightbox/glightbox.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="./js/js-index/swiper/swiper-bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
-    integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
-    integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
-    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
 
   <!-- Template Main JS File -->
   <script src="./js/js-index/main.js"></script>
-  
+
 
 
 </body>
