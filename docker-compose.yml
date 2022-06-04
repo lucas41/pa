@@ -13,7 +13,6 @@ services:
     links:
       - db
 
-
   db:
     image: mariadb:latest
     container_name: mariadb
@@ -25,7 +24,6 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=pa
-
 
   phpmyadmin:
     image: phpmyadmin:latest
