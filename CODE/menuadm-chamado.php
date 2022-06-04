@@ -89,7 +89,8 @@ foreach ($linha as $func) {
                         <div class="col-6">
                             <h1> Localização </h1>
                             <br>
-                        
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14756.135268926595!2d-46.91105235!3d-22.390082550000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spt-BR!2sbr!4v1653868206264!5m2!1spt-BR!2sbr" width="600" height="335" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
                         <div class="col-6">
                             <h1> Imagem </h1>
                             <br>
