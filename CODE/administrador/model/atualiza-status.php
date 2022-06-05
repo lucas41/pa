@@ -1,6 +1,6 @@
 <?php 
 
-include('../sql/sql.php');
+include '/var/www/html/CODE/sql/sql.php';
 
 session_start();
 
@@ -17,11 +17,9 @@ try {
         $editar = $conexao->prepare("update chamados set status=? where id_chamado=? ");
         $editar->execute(array($status,$id));
     }
-    $_SESSION['message'] = "Status atualizado com sucesso!";
-    $_SESSION['messageID'] = 1;
+    $_SESSION['message_ok'] = "Status atualizado com sucesso!";
 } catch (\PDOException $err) {
-    $_SESSION['message'] = "Falha ao atualizar o status!";
-    $_SESSION['messageID'] = 0;
+    $_SESSION['message_err'] = "Falha ao atualizar o status!";
 }
 
-header('Location: ../menuadm-chamados-todos.php');
+header('Location: /CODE/administrador/view/chamado-todos.php');

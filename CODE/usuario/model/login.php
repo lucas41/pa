@@ -40,7 +40,7 @@ if ($total > 0) {
                 $_SESSION['usuario'] = $nomeusuario; // inicia nova sessão e passa o nome da pessoa
                 $_SESSION['permission'] = $permissao;
                 $_SESSION['message_ok'] = "Login realizado com sucesso";
-                header('Location: ../menuadm-chamado-todos.php'); // renderiza o menu
+                header('Location: /CODE/administrador/view/chamado-todos.php'); // renderiza o menu
             } else {
                 session_start();
                 $_SESSION['message_err'] = "E-mail ou Senha invalidos";
@@ -79,16 +79,16 @@ if ($total > 0) {
                 $_SESSION['usuario'] = $nomeusuario; // inicia nova sessão e passa o nome da pessoa
                 $_SESSION['id_user'] = $id_user;
                 $_SESSION['message_ok'] = "Login realizado com sucesso";
-                header('Location: ../menu.php'); // renderiza o menu
+                header('Location: /CODE/usuario/view/chamado-todos.php'); // renderiza o menu
             } else {
                 session_start();
                 $_SESSION['message_err'] = "E-mail ou Senha invalidos";
-                header("location: ../user-index.php");
+                header("location: /CODE/usuario/view/index.php");
             }
         } else {
             session_start();
             $_SESSION['message_err'] = "E-mail ou Senha invalidos";
-            header("location: ../user-index.php");
+            header("location: /CODE/usuario/view/index.php");
         }
     }
 }

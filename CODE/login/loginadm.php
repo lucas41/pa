@@ -34,7 +34,7 @@ foreach($linha as $func){
             $_SESSION['usuario'] = $nomeusuario; // inicia nova sessão e passa o nome da pessoa
             $_SESSION['permission'] = $permissao;
             
-            header('Location: ../menuadm-chamados-todos.php'); // renderiza o menu
+            header('Location: ../menuadm-chamado-todos.php'); // renderiza o menu
         } else {
             header('Location: ../scripts/erro.php'); // eniva para a pagina de erro
         }
