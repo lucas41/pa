@@ -2,8 +2,8 @@
 
 session_start();
 
-include '/var/www/html/CODE/usuario/view/css.php';
-include '/var/www/html/CODE/templates/user/template-header.php';
+include '../../usuario/view/css.php';
+include '../../templates/user/template-header.php';
 
 ?>
 
@@ -109,7 +109,7 @@ include '/var/www/html/CODE/templates/user/template-header.php';
   
 </footer>
 
-<?php include '/var/www/html/CODE/templates/user/template-js.php'; ?>
+<?php include '../../templates/user/template-js.php'; ?>
 
 
 </html>
