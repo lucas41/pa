@@ -54,7 +54,7 @@ include '/var/www/html/CODE/templates/user/template-header.php';
                     ?>
 
                         <tr style="text-align: center;">
-                            <td> <?php echo $id ?> </td>
+                            <td> <?php echo htmlentities($id) ?> </td>
                             <td> <?php echo $detalhes ?> </td>
                             <td> <?php echo $data ?> </td>
                             <td> <?php echo $status ?> </td>

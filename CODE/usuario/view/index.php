@@ -46,8 +46,8 @@ include '../../templates/user/template-header.php';
             <form action="/CODE/usuario/model/cadastro.php" method="post"><br>
               <input type="text" name="nomeusuario" placeholder="Nome" required autocomplete="off">
               <input type="email" name="mailusuario" placeholder="Email" required autocomplete="off">
-              <input type="number" name="telefone" placeholder="Telefone" required autocomplete="off">
-              <input type="number" name="cpf" placeholder="CPF" required autocomplete="off">
+              <input type="number" name="telefone" placeholder="Telefone" required autocomplete="off" maxlength="9">
+              <input type="number" name="cpf" placeholder="CPF" required autocomplete="off" maxlength="11" >
               <input type="password" name="senhausuario" placeholder="senha" required autocomplete="off">
               <input type="password" name="Repetir Senha" placeholder="Confirme a senha" required oninput="validaSenha(this)" autocomplete="off">
               <br><br>

@@ -25,7 +25,7 @@ foreach ($linha as $func) {
 ?>
     <div class="container">
         <div class="p-lg-3">
-            <h1 style="text-align: center;"> Informações do chamado #<?php echo $id ?> </h1>
+            <h1 style="text-align: center;"> Informações do chamado #<?php echo htmlentities($id) ?> </h1>
             <div>
                 <section class="multi_step_form">
                     <form id="msform">
@@ -35,14 +35,14 @@ foreach ($linha as $func) {
                             <li id="prog_finalizado">Finalizado</li>
                         </ul>
                         <script>
-                            if ("<?php echo $status ?>" == 'Finalizado') {
+                            if ("<?php echo htmlentities($status) ?>" == 'Finalizado') {
                                 document.getElementById('prog_finalizado').setAttribute('class', 'active');
                                 document.getElementById('prog_progresso').setAttribute('class', 'active');
                                 document.getElementById('prog_analise').setAttribute('class', 'active');
-                            } else if ("<?php echo $status ?>" == 'Em progresso') {
+                            } else if ("<?php echo htmlentities($status) ?>" == 'Em progresso') {
                                 document.getElementById('prog_progresso').setAttribute('class', 'active');
                                 document.getElementById('prog_analise').setAttribute('class', 'active');
-                            } else if ("<?php echo $status ?>" == 'Em análise') {
+                            } else if ("<?php echo htmlentities($status) ?>" == 'Em análise') {
                                 document.getElementById('prog_analise').setAttribute('class', 'active');
                             }
                         </script>
@@ -71,30 +71,30 @@ foreach ($linha as $func) {
                     <div class="row">
                         <div class="col">
                             <label for="exampleFormControlTextarea1" class="form-label"><b>Nome da rua</b></label>
-                            <textarea readonly class="form-control" id="exampleFormControlTextarea1" rows="1" style="width:70%; resize: none"> <?php echo $nomerua ?> </textarea>
+                            <textarea readonly class="form-control" id="exampleFormControlTextarea1" rows="1" style="width:70%; resize: none"> <?php echo htmlentities($nomerua) ?> </textarea>
                         </div>
                         <div class="col">
                             <label for="exampleFormControlTextarea1" class="form-label"><b>Número</b></label>
-                            <textarea readonly class="form-control" id="exampleFormControlTextarea1" rows="1" style="width:39%; resize: none"> <?php echo $numero ?> </textarea>
+                            <textarea readonly class="form-control" id="exampleFormControlTextarea1" rows="1" style="width:39%; resize: none"> <?php echo htmlentities($numero) ?> </textarea>
                         </div>
                     </div>
 
                     <br>
 
                     <label for="exampleFormControlTextarea1" class="form-label"><b>Referência</b></label>
-                    <textarea readonly class="form-control" id="exampleFormControlTextarea1" rows="1" style="width:70%; resize: none"> <?php echo $referencial ?> </textarea>
+                    <textarea readonly class="form-control" id="exampleFormControlTextarea1" rows="1" style="width:70%; resize: none"> <?php echo htmlentities($referencial) ?> </textarea>
 
                     <br>
 
                     <label for="exampleFormControlTextarea1" class="form-label"><b>Detalhes da ocorrencia</b></label>
-                    <textarea readonly class="form-control" id="exampleFormControlTextarea1" rows="2" style="width:70%; resize: none"> <?php echo $detalhes ?> </textarea>
+                    <textarea readonly class="form-control" id="exampleFormControlTextarea1" rows="2" style="width:70%; resize: none"> <?php echo htmlentities($detalhes) ?> </textarea>
 
                     <br>
 
                     <?php if ($inf_fechamento != null) { ?>
 
                         <label for="exampleFormControlTextarea1" class="form-label"><b>Informações de Encerramento do chamado</b></label>
-                        <textarea readonly class="form-control" id="exampleFormControlTextarea1" rows="2" style="width:70%; resize: none"><?php echo $inf_fechamento ?></textarea>
+                        <textarea readonly class="form-control" id="exampleFormControlTextarea1" rows="2" style="width:70%; resize: none"><?php echo htmlentities($inf_fechamento) ?></textarea>
 
                     <?php } ?>
 
@@ -110,7 +110,7 @@ foreach ($linha as $func) {
                         </div>
                         <div class="col">
                             <h1> Imagem </h1>
-                            <img src="uploads/<?php echo $imagem ?>" width="500" height="335">
+                            <img src="uploads/<?php echo htmlentities($imagem) ?>" width="500" height="335">
                         </div>
                     </div>
                 </div>
