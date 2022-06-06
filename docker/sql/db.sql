@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: db
--- Tempo de geração: 26-Maio-2022 às 02:16
--- Versão do servidor: 10.7.3-MariaDB-1:10.7.3+maria~focal
+-- Tempo de geração: 06-Jun-2022 às 02:11
+-- Versão do servidor: 10.8.3-MariaDB-1:10.8.3+maria~jammy
 -- versão do PHP: 8.0.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -50,7 +50,8 @@ INSERT INTO `administradores` (`id_adm`, `nome`, `email`, `senha`) VALUES
 --
 
 CREATE TABLE `chamados` (
-  `id_chamado` int(50) NOT NULL,
+  `n_chamado` int(50) NOT NULL,
+  `id_chamado` varchar(255) NOT NULL,
   `nrua` varchar(255) NOT NULL,
   `numero` int(255) NOT NULL,
   `referencial` varchar(255) NOT NULL,
@@ -98,7 +99,7 @@ ALTER TABLE `administradores`
 -- Índices para tabela `chamados`
 --
 ALTER TABLE `chamados`
-  ADD PRIMARY KEY (`id_chamado`),
+  ADD PRIMARY KEY (`n_chamado`),
   ADD KEY `id_user_fk` (`id_user`);
 
 --
@@ -121,7 +122,7 @@ ALTER TABLE `administradores`
 -- AUTO_INCREMENT de tabela `chamados`
 --
 ALTER TABLE `chamados`
-  MODIFY `id_chamado` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `n_chamado` int(50) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `usuarios`
