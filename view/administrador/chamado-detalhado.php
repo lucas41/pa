@@ -16,7 +16,6 @@ include '/var/www/html/templates/administrador/header.php';
         <div class="col-12">
             <div class="page-title-box">
                 <h4 class="page-title">Informação do chamado</h4>
-                <br><br>
             </div>
         </div>
     </div>
