@@ -29,7 +29,6 @@ Foram ultilizados as seguintes ferramentas para criação deste website
       <img href="" src="https://cdn-icons-png.flaticon.com/512/732/732190.png" style="width: 50px; height: 50px">
       &nbsp;
      <img href="" src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" style="width: 50px; height: 50px">
-  <i class="fa-brands fa-docker"></i>
    </center>
 </div>
 <br>
