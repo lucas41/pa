@@ -4,12 +4,18 @@ Projeto de Aplicação feito pelos alunos do 6º período de Sistemas da Informa
 
 O projeto tem como objetivo a criação de um site para gestão de incidentes urbanos, para assim facilitar a vida de moradores que têm seu dia a dia agitado e não podem se locomover até a prefeitura para informar  sobre incidentes como, por exemplo, quando o poste de sua rua está sem energia. Desta forma, o seguinte projeto ajudará as prefeituras de diversas cidades a melhorar suas administrações.
 
-O Sistema supri os seguintes problemas urbanos:
--
--
--
--
--
+
+# Como usar
+
+A aplicação tem como requisito ter o Docker e o docker-compose instalado na sua máquina,
+após a instalar seguir os seguintes passos:
+
+- Dentro da pasta /docker execute o comando "docker-compose up"
+
+Após esse simples comando a aplicação estará no ar
+
+Para acessar colocar na barra de endereço: localhost
+
 
 
 Foram ultilizados as seguintes ferramentas para criação deste website
