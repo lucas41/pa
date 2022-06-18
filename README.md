@@ -17,8 +17,7 @@ Após esse simples comando a aplicação estará no ar
 Para acessar colocar na barra de endereço: localhost
 
 
-
-Foram ultilizados as seguintes ferramentas para criação deste website
+# Foram ultilizados as seguintes ferramentas para criação deste website
 
 <div>
  <center>
