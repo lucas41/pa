@@ -22,13 +22,16 @@ Foram ultilizados as seguintes ferramentas para criação deste website
 
 <div>
  <center>
-      <img href="https://www.php.net/" src="https://cdn-icons-png.flaticon.com/512/919/919830.png" style="width: 50px; height: 50px">
+      <img href="" src="https://cdn-icons-png.flaticon.com/512/919/919830.png" style="width: 50px; height: 50px">
       &nbsp;
       <img href="" src="https://cdn-icons-png.flaticon.com/512/1051/1051277.png" style="width: 50px; height: 50px">
        &nbsp;
       <img href="" src="https://cdn-icons-png.flaticon.com/512/732/732190.png" style="width: 50px; height: 50px">
       &nbsp;
      <img href="" src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" style="width: 50px; height: 50px">
+      &nbsp;
+     <img href="" src="https://cdn-icons-png.flaticon.com/512/919/919853.png" style="width: 50px; height: 50px">
+  
    </center>
 </div>
 <br>
